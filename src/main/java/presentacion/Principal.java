@@ -15,7 +15,7 @@ import interfaces.IcRegistro;
 import interfaces.IcTest;
 import interfaces.IcUsuario;
 import logica.Fabrica;
-import publicadores.ControladorPublish;
+import publicadores.ControladorEspectaculoPublish;
 
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -75,7 +75,7 @@ public class Principal {
 		IcUsuario iconU = fabrica.getIControladorUsuario();
 		IcEspectaculo iconE = fabrica.getIControladorEspectaculo();
 		
-		ControladorPublish cp = new ControladorPublish();
+		ControladorEspectaculoPublish cp = new ControladorEspectaculoPublish();
 		cp.publicar();	
 		
 		

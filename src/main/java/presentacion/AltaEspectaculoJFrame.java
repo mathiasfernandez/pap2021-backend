@@ -211,7 +211,7 @@ public class AltaEspectaculoJFrame extends JInternalFrame{
 		JButton btnNewButton = new JButton("Confirmar");
 		btnNewButton.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			try {
+			
 				if (!camposVaciosEspectaculo()) {
 					int anio = fechaAlta.getCalendar().get(java.util.Calendar.YEAR) - 1900;
 					int mes = fechaAlta.getCalendar().get(java.util.Calendar.MONTH);
@@ -243,10 +243,7 @@ public class AltaEspectaculoJFrame extends JInternalFrame{
 					}
 				else
 					JOptionPane.showMessageDialog(null, "Hay Cambos vacios", "Alta Espectaculo",JOptionPane.ERROR_MESSAGE);
-				} catch (EspectaculoRepetidoExepcion e1) {
-					e1.getMessage();
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Alta Espectaculo", JOptionPane.ERROR_MESSAGE);
-				}
+				
 		}	
 		});
 		btnNewButton.setBounds(375, 522, 117, 25);

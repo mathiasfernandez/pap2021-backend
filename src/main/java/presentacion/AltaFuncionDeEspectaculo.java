@@ -261,9 +261,7 @@ public class AltaFuncionDeEspectaculo extends JInternalFrame {
 								limpiar();
 								dispose(); // cierra esta ventana
 								
-							}catch(FuncionYaExisteExcepcion e){
-								JOptionPane.showMessageDialog(null, e.getMessage().toString(), "Alta Funcion de Espectaculo", JOptionPane.ERROR_MESSAGE);
-							}catch(Exception e) {
+								}catch(Exception e) {
 								JOptionPane.showMessageDialog(null, "Algo salio mal :(", "Alta Funcion de Espectaculo", JOptionPane.ERROR_MESSAGE);
 								dispose(); // cierra esta ventana
 							}

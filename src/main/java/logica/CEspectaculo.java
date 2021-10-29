@@ -37,7 +37,7 @@ public class CEspectaculo implements IcEspectaculo {
 	}
 
 	@Override
-	public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, List<String> invitados) throws FuncionYaExisteExcepcion {
+	public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, List<String> invitados) {
 		
 		ManejadorEspectaculo mE = ManejadorEspectaculo.getInstancia();
 		ManejadorUsuario mU = ManejadorUsuario.getInstancia();
@@ -52,13 +52,7 @@ public class CEspectaculo implements IcEspectaculo {
 			if(esp.toString().equals(nomEspectaculo)) { 					// comparo strings
 				Espectaculo espect = mE.buscarEspectaculo(nomEspectaculo); 	// traigo objeto
 				
-				for (Funcion fun : espect.getFunciones()) {
-					
-					if(fun.getNombreFunc().toLowerCase().equals(nomFuncion.toLowerCase())) { 			// chequear que la funcion no exista
-						throw new FuncionYaExisteExcepcion("Ya existe una funcion con el nombre '" + nomFuncion + "'");
-					}
-					
-				}
+
 				// obtener artistas invitados desde nickname
 				for (String invitado : invitados) {
 					artistasInvitados.add((Artista) mU.buscarUsuario(invitado));
@@ -83,7 +77,7 @@ public class CEspectaculo implements IcEspectaculo {
 	}
 
 	@Override
-	public void confirmarAltaEspectaculo(String nombreEsp, String descripcion, int duracion, int minEspectadores, int maxEspectadores,String url, float costo, Date fechaRegistro,String plataforma, String art, String imagen) throws EspectaculoRepetidoExepcion {
+	public void confirmarAltaEspectaculo(String nombreEsp, String descripcion, int duracion, int minEspectadores, int maxEspectadores,String url, float costo, Date fechaRegistro,String plataforma, String art, String imagen)  {
 	
 		ManejadorUsuario mU = ManejadorUsuario.getInstancia();
 		ManejadorEspectaculo mE = ManejadorEspectaculo.getInstancia();
@@ -92,14 +86,12 @@ public class CEspectaculo implements IcEspectaculo {
 		Plataforma pla = mP.buscarPlataforma(plataforma); 
 		Artista artista = (Artista) mU.buscarUsuario(art);
 		
-		if (mE.existeEspectaculo(nombreEsp))
-			throw new EspectaculoRepetidoExepcion("Ya existe un espectaculo con el nombre " + nombreEsp);
-		else {
+
 			Espectaculo esp = new Espectaculo(nombreEsp,descripcion,duracion,minEspectadores,maxEspectadores,url,costo,fechaRegistro,pla,artista,imagen);
 			artista.agregarEspectaculo(esp);
 			pla.agregarEspectaculo(esp);
 			mE.agregarEspectaculo(esp);
-			}
+		
 	}
 	
 	

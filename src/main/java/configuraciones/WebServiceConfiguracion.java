@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 public class WebServiceConfiguracion {
-	private String path = System.getProperty("user.home") + "/Tarea1_WebServer/src/main/java/configuraciones/.properties";
+	private String path = "C:\\GIT\\pap2021-backend\\src\\main\\java\\configuraciones\\.properties";
 	
     private HashMap<String, String> configs;
     
