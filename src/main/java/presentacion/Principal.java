@@ -16,6 +16,10 @@ import interfaces.IcTest;
 import interfaces.IcUsuario;
 import logica.Fabrica;
 import publicadores.ControladorEspectaculoPublish;
+import publicadores.ControladorPaquetePublish;
+import publicadores.ControladorPlataformaPublish;
+import publicadores.ControladorRegistroPublish;
+import publicadores.ControladorUsuarioPublish;
 
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -77,7 +81,18 @@ public class Principal {
 		
 		ControladorEspectaculoPublish cp = new ControladorEspectaculoPublish();
 		cp.publicar();	
+
+		ControladorPaquetePublish cpa = new ControladorPaquetePublish();
+		cpa.publicar();	
 		
+		ControladorRegistroPublish cpr = new ControladorRegistroPublish();
+		cpr.publicar();	
+		
+		ControladorPlataformaPublish cpla = new ControladorPlataformaPublish();
+		cpla.publicar();	
+		
+		ControladorUsuarioPublish cpu = new ControladorUsuarioPublish();
+		cpu.publicar();	
 		
 		IcPlataforma iconP = fabrica.getIControladorPlataforma();
 		IcPaquete iconPQ = fabrica.getIControladorPaquete();

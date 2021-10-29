@@ -53,10 +53,10 @@ public class ControladorEspectaculoPublish {
 			iconE.SeleccionarEspectaculo(espectaculo);
 		}
 		
-//		@WebMethod
-//		public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, List<String> invitados) {
+		@WebMethod
+		public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, String[] invitados) {
 //		iconE.setFuncion(nomEspectaculo, nomFuncion, fecha, invitados);
-//		} 
+		} 
 		
 		@WebMethod
 		public String[] listarEspectaculos(String nomPlataforma){
