@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="coronatickets">
+	
+	<class>logica.Usuario</class>
+	<class>logica.Paquete</class>
+	<class>logica.Artista</class>
+	<class>logica.Espectador</class>
+	<class>logica.Plataforma</class>
+	<class>logica.Registro</class>
+	<class>logica.Funcion</class>
+	<class>logica.Espectaculo</class>
+		
+	
+	
+	<properties>
+		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-34-228-100-83.compute-1.amazonaws.com:5432/d3cs33e9vebkei" />
+		<property name="javax.persistence.jdbc.user" value="uyjihptundcdsv"/>
+		<property name="hibernate.connection.requireSSL" value="true" />
+		<property name="hibernate.connection.useSSL" value="true" />
+		<property name="hibernate.connection.pool_size" value="10" />
+		<property name="javax.persistence.jdbc.password" value="65d0c84c1d4e357044364c60092be95a4740703a72918af4c2c666c615118b65"/>
+		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/>
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
+	</properties>
+</persistence-unit>
+</persistence>
