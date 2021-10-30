@@ -16,6 +16,7 @@ public interface IcEspectaculo {
 	
 	public DtEspectaculo SeleccionarEspectaculo(Espectaculo espectaculo);
 	public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, List<String> invitados) ; // da de alta una funcion
+	public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, String [] invitados)  ; // da de alta una funcion
 	public List<String> listarEspectaculos(String nomPlataforma);
 	public void confirmarAltaEspectaculo(String nombreEsp, String descripcion, int duracion, int minEspectadores, int maxEspectadores,
 			String url, float costo, Date fechaRegistro,String pla, String art,String imagen) ;

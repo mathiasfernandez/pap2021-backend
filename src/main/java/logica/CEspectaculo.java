@@ -37,6 +37,16 @@ public class CEspectaculo implements IcEspectaculo {
 	}
 
 	@Override
+	public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, String [] invitados) {
+		List<String> Linvitados = new ArrayList<String>();
+		for(String invitado: invitados) {
+			Linvitados.add(invitado);
+		}
+		setFuncion(nomEspectaculo, nomFuncion, fecha, Linvitados);
+	}
+	
+	
+	@Override
 	public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, List<String> invitados) {
 		
 		ManejadorEspectaculo mE = ManejadorEspectaculo.getInstancia();
@@ -57,17 +67,11 @@ public class CEspectaculo implements IcEspectaculo {
 				for (String invitado : invitados) {
 					artistasInvitados.add((Artista) mU.buscarUsuario(invitado));
 				}
-				
-		
 				Funcion f = new Funcion(nomFuncion, dateAhora, fecha, artistasInvitados, espect);	
-				
 				espect.agregarFuncion(f);
 				mE.agregarFuncionEspectaculo(espect, f);
-				
 			}
 		}
-		
-		
 	}
 
 	@Override

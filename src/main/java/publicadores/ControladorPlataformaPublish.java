@@ -44,7 +44,10 @@ public class ControladorPlataformaPublish {
 		return endpoint;
 	}
 	@WebMethod
-	public String[] getPlataformas() {return iconPla.getPlataformas();}
+	public String[] getPlataformas() {
+		return iconPla.getPlataformas();
+	}
+	
 	@WebMethod
 	public void confirmarAltaPlataforma(String nombre, String desc, String url) { try {
 		iconPla.confirmarAltaPlataforma(nombre, desc, url);
@@ -54,8 +57,12 @@ public class ControladorPlataformaPublish {
 	}}
 	
 	@WebMethod
-	public boolean existePlataforma(String nombre) {return iconPla.existePlataforma(nombre);}
+	public boolean existePlataforma(String nombre) {
+		return iconPla.existePlataforma(nombre);
+	}
+
 	@WebMethod
-	
-	public Plataforma buscarPlataforma(String nombre) {return iconPla.buscarPlataforma(nombre);}
+	public Plataforma buscarPlataforma(String nombre) {
+		return iconPla.buscarPlataforma(nombre);
+	}
 }

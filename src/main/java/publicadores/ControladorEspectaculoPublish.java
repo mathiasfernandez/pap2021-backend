@@ -47,6 +47,7 @@ public class ControladorEspectaculoPublish {
 	public Endpoint getEndpoint(){
 		return endpoint;
 	}
+	
 	 //a partir de aca van todos los metodos que se van a publicar
 		@WebMethod
 		public void seleccionarEspectaculo(Espectaculo espectaculo){
@@ -55,7 +56,7 @@ public class ControladorEspectaculoPublish {
 		
 		@WebMethod
 		public void setFuncion(String nomEspectaculo, String nomFuncion, Date fecha, String[] invitados) {
-//		iconE.setFuncion(nomEspectaculo, nomFuncion, fecha, invitados);
+			iconE.setFuncion(nomEspectaculo, nomFuncion, fecha, invitados);
 		} 
 		
 		@WebMethod
@@ -69,11 +70,13 @@ public class ControladorEspectaculoPublish {
 	            i++;
 	        }
 	        return ret;}
+		
 		@WebMethod
 		public void confirmarAltaEspectaculo(String nombreEsp, String descripcion, int duracion, int minEspectadores, int maxEspectadores,
 				String url, float costo, Date fechaRegistro,String pla, String art,String imagen)  {
-		iconE.confirmarAltaEspectaculo(nombreEsp, descripcion, duracion, minEspectadores, maxEspectadores, url, costo, fechaRegistro, pla, art, imagen);
+			iconE.confirmarAltaEspectaculo(nombreEsp, descripcion, duracion, minEspectadores, maxEspectadores, url, costo, fechaRegistro, pla, art, imagen);
 		}
+		
 		@WebMethod
 		DtEspectaculo[] getEspectaculos(String plataforma){
 			List<DtEspectaculo> dtEspectaculo = iconE.getEspectaculos(plataforma);
@@ -85,12 +88,22 @@ public class ControladorEspectaculoPublish {
 	        }
 	        return ret;
 		}
+		
 		@WebMethod
-		public String[] listarFunciones(String nomEsp) {return iconE.listarFunciones(nomEsp);}
+		public String[] listarFunciones(String nomEsp) {
+			return iconE.listarFunciones(nomEsp);
+		}
+		
 		@WebMethod
-		public String[] getArrEspectaculos(String plataforma) {return iconE.getArrEspectaculos(plataforma);}
+		public String[] getArrEspectaculos(String plataforma) {
+			return iconE.getArrEspectaculos(plataforma);
+		}
+		
 		@WebMethod
-		public String[] getArrFunciones(String espectaculo) {return iconE.getArrFunciones(espectaculo);}
+		public String[] getArrFunciones(String espectaculo) {
+			return iconE.getArrFunciones(espectaculo);
+		}
+		
 		@WebMethod
 		public DtFuncion[] getNuevasFunciones(Integer top){
 			
@@ -103,15 +116,30 @@ public class ControladorEspectaculoPublish {
 	        }
 	        return ret;
 	     }
+		
 		@WebMethod
-		public String[] listarEspectaculo(String nomPlataforma) {return iconE.listarEspectaculo(nomPlataforma);}
+		public String[] listarEspectaculo(String nomPlataforma) {
+			return iconE.listarEspectaculo(nomPlataforma);
+		}
+		
 		@WebMethod
-		DtEspectaculo buscarEspectaculoNombre(String nomEsp) {return iconE.buscarEspectaculoNombre(nomEsp);}
+		DtEspectaculo buscarEspectaculoNombre(String nomEsp) {
+			return iconE.buscarEspectaculoNombre(nomEsp);
+		}
+		
 		@WebMethod
-		DtFuncion getDtFuncion(String espectaculo, String funcion) {return iconE.getDtFuncion(espectaculo, funcion);}
+		DtFuncion getDtFuncion(String espectaculo, String funcion) {
+			return iconE.getDtFuncion(espectaculo, funcion);
+		}
+		
 		@WebMethod
-		String[] listarPaquetes(String nomEsp) {return iconE.listarPaquetes(nomEsp);}
+		String[] listarPaquetes(String nomEsp) {
+			return iconE.listarPaquetes(nomEsp);
+		}
+		
 		@WebMethod
-		String[] listarEspectaculosArtista(String artista) {return iconE.listarEspectaculosArtista(artista);}
+		String[] listarEspectaculosArtista(String artista) {
+			return iconE.listarEspectaculosArtista(artista);
+		}
 		
 }
