@@ -78,7 +78,7 @@ public class ControladorEspectaculoPublish {
 		}
 		
 		@WebMethod
-		DtEspectaculo[] getEspectaculos(String plataforma){
+		public DtEspectaculo[] getEspectaculos(String plataforma){
 			List<DtEspectaculo> dtEspectaculo = iconE.getEspectaculos(plataforma);
 			int i = 0;
 			DtEspectaculo[] ret = new DtEspectaculo[dtEspectaculo.size()];
@@ -123,22 +123,22 @@ public class ControladorEspectaculoPublish {
 		}
 		
 		@WebMethod
-		DtEspectaculo buscarEspectaculoNombre(String nomEsp) {
+		public DtEspectaculo buscarEspectaculoNombre(String nomEsp) {
 			return iconE.buscarEspectaculoNombre(nomEsp);
 		}
 		
 		@WebMethod
-		DtFuncion getDtFuncion(String espectaculo, String funcion) {
+		public DtFuncion getDtFuncion(String espectaculo, String funcion) {
 			return iconE.getDtFuncion(espectaculo, funcion);
 		}
 		
 		@WebMethod
-		String[] listarPaquetes(String nomEsp) {
+		public String[] listarPaquetes(String nomEsp) {
 			return iconE.listarPaquetes(nomEsp);
 		}
 		
 		@WebMethod
-		String[] listarEspectaculosArtista(String artista) {
+		public String[] listarEspectaculosArtista(String artista) {
 			return iconE.listarEspectaculosArtista(artista);
 		}
 		
