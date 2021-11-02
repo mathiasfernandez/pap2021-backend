@@ -53,70 +53,68 @@ public class ControladorPaquetePublish {
 	
 	@WebMethod
 	public DtPaquete seleccionarPaquete(String nombre) {
-		return null;
-//		return iconP.seleccionarPaquete(nombre);
+		return iconP.seleccionarPaquete(nombre);
 	}
 //	
 	@WebMethod
 	public String[] listarPaquetes() {
-//		List<String> listarPaquetes = iconP.listarPaquetes();
-//		int i = 0;
-//		String[] ret = new String[listarPaquetes.size()];
-//        for(String s : listarPaquetes) {
-//            ret[i]=s;
-//            i++;
-//        }
-//        return ret;
-	return null;
+		List<String> listarPaquetes = iconP.listarPaquetes();
+		int i = 0;
+		String[] ret = new String[listarPaquetes.size()];
+        for(String s : listarPaquetes) {
+            ret[i]=s;
+            i++;
+        }
+        return ret;
+
 }
 
 	@WebMethod
 	public String[] listarPlataformas(){
-//		List<String> listarPlataformas = iconP.listarPlataformas();
-//		int i = 0;
-//		String[] ret = new String[listarPlataformas.size()];
-//        for(String s : listarPlataformas) {
-//            ret[i]=s;
-//            i++;
-//        }
-//        return ret;
-		return null;
+		List<String> listarPlataformas = iconP.listarPlataformas();
+		int i = 0;
+		String[] ret = new String[listarPlataformas.size()];
+        for(String s : listarPlataformas) {
+            ret[i]=s;
+            i++;
+        }
+        return ret;
    }
 		
 
 	@WebMethod
 	public String[] listaEspectaculosNOPAQUETE(String plataforma, String paquete) {
-//		List<String> listaEspectaculosNOPAQUETE = iconP.listaEspectaculosNOPAQUETE(plataforma, paquete);
-//		int i = 0;
-//		String[] ret = new String[listaEspectaculosNOPAQUETE.size()];
-//        for(String s : listaEspectaculosNOPAQUETE) {
-//            ret[i]=s;
-//            i++;
-//        }
-//        return ret;	
-		return null;
+		List<String> listaEspectaculosNOPAQUETE = iconP.listaEspectaculosNOPAQUETE(plataforma, paquete);
+		int i = 0;
+		String[] ret = new String[listaEspectaculosNOPAQUETE.size()];
+        for(String s : listaEspectaculosNOPAQUETE) {
+            ret[i]=s;
+            i++;
+        }
+        return ret;	
+	
 	}
-//	
+
 	@WebMethod
 	public void agregarEspectaculoAPaquete(String paquete, String Espectaculo) {
-//	iconP.agregarEspectaculoAPaquete(paquete, Espectaculo);
+	iconP.agregarEspectaculoAPaquete(paquete, Espectaculo);
 
 	}
-//	
+
 	@WebMethod
 	public void agregarPaquete(String nombrePac, String descripcion, Date fInicio, Date fFinal, Integer descuento, Date fechaDeAlta,Espectaculo[] espectaculos) {
 //		iconP.agregarPaquete(nombrePac, descripcion, fInicio, fFinal, descuento, fechaDeAlta, espectaculos);	
 	}
-//	
+
 	@WebMethod
 	public boolean ExistePaquete(String nombre) {
-//		return iconP.ExistePaquete(nombre)
-	return false;
+		return iconP.ExistePaquete(nombre);
+
 	}
-//	
+
 	@WebMethod
 	public DtPaquete infoPaquete(String nombre) {
-//		return iconP.infoPaquete(nombre);
-		return null;
+		return iconP.infoPaquete(nombre);
+	
 	}
 }
