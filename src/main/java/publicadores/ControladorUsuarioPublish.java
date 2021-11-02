@@ -1,6 +1,5 @@
 package publicadores;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,14 +13,10 @@ import javax.xml.ws.Endpoint;
 import configuraciones.WebServiceConfiguracion;
 import datatypes.DtArtista;
 import datatypes.DtEspectador;
-import datatypes.DtPaquete;
 import datatypes.DtUsuario;
 import exepciones.UsuarioRepetidoExepcion;
-import interfaces.IcPaquete;
-import interfaces.IcPlataforma;
 import interfaces.IcUsuario;
 import logica.Artista;
-import logica.Espectaculo;
 import logica.Fabrica;
 
 @WebService
@@ -67,65 +62,155 @@ public class ControladorUsuarioPublish {
 	
 	
 	@WebMethod
-	public void confirmarAltaUsuario(DtUsuario us) {try {
-		iconU.confirmarAltaUsuario(us);
-	} catch (UsuarioRepetidoExepcion e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}}
+	public void confirmarAltaUsuario(DtUsuario us) {
+		try {
+			iconU.confirmarAltaUsuario(us);
+		} catch (UsuarioRepetidoExepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@WebMethod
 	public DtUsuario[] getUsuarios(){
-		return null;
+		DtUsuario[] ret = null;
+		try {
+			List<DtUsuario> dtusuarios = iconU.getUsuarios();
+			int i = 0;
+			ret = new DtUsuario[dtusuarios.size()];
+	        for(DtUsuario s : dtusuarios) {
+	            ret[i]=s;
+	            i++;
+	        }
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 	
 	public String[] getArtistas() {
-		return null;
+		String[] ret = null;
+		try {
+			ret = iconU.getArtistas();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 	@WebMethod
 	public String[] listarUsuarios() {
-		return null;
+		String[] ret = null;
+		try {
+			ret = iconU.listarUsuarios();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 	@WebMethod
 	public Artista getArtista(String nickname) {
-		return null;
+		Artista ret = null;
+		try {
+			ret = iconU.getArtista(nickname);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
+	
 	@WebMethod
 	public DtUsuario getDtUsuario(String nickname) {
-		return null;
+		DtUsuario ret = null;
+		try {
+			ret = iconU.getDtUsuario(nickname);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 	@WebMethod
 	public String[] obtenerEspectadores() {
-		return null;
+		String[] ret = null;
+		try {
+			ret = iconU.obtenerEspectadores();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 	@WebMethod
 	public boolean validarIngreso(String user, String contra) {
-		return false;
+		boolean ret = false;
+		try {
+			ret = iconU.validarIngreso(user, contra);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 	@WebMethod
 	public void seguirUsuario(String seguidor, String usuarioSeguido) {
+		try {
+			iconU.seguirUsuario(seguidor, usuarioSeguido);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	@WebMethod
 	public void dejarDeSeguirUsuario(String seguidor, String usuarioSeguido) {
+		try {
+			iconU.dejarDeSeguirUsuario(seguidor, usuarioSeguido);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	@WebMethod
 	public void cargarImagenUrl(String us, String imagen) {
+		try {
+			iconU.cargarImagenUrl(us, imagen);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	@WebMethod
 	public boolean yaLoSigo(String seguidor, String seguido) {
-		return false;
+		boolean ret = false;
+		try {
+			ret = iconU.yaLoSigo(seguidor, seguido);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 
 	@WebMethod
 	public void actualizarUsuario(DtUsuario us) {
+		try {
+			iconU.actualizarUsuario(us);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 	@WebMethod
 	public String[] usuariosSeguidos(String nickname) {
-		return null;
+		String[] ret = null;
+		try {
+			ret = iconU.usuariosSeguidos(nickname);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 	@WebMethod
 	public String[] usuariosMeSiguen(String nickname) {
-		return null;
+		String[] ret = null;
+		try {
+			ret = iconU.usuariosMeSiguen(nickname);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ret;
 	}
 
 }
