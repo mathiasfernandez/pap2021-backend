@@ -1,7 +1,10 @@
 package datatypes;
 
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DtRegistro {
 		
 	private String nickname;
@@ -41,6 +44,14 @@ public class DtRegistro {
 			return false;
 		DtRegistro other = (DtRegistro) obj;
 		return Objects.equals(nickname, other.nickname) && Objects.equals(nombreFun, other.nombreFun);
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public void setNombreFun(String nombreFun) {
+		this.nombreFun = nombreFun;
 	}
 	
 	

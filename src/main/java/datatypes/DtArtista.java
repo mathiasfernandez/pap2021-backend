@@ -4,7 +4,10 @@ import java.util.List;
 
 import logica.Artista;
 import logica.ManejadorUsuario;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DtArtista extends DtUsuario{
 	private String descripcion;
 	private String bibliografia;
@@ -28,5 +31,17 @@ public class DtArtista extends DtUsuario{
 
 	public String getSitio_web() {
 		return sitio_web;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void setBibliografia(String bibliografia) {
+		this.bibliografia = bibliografia;
+	}
+
+	public void setSitio_web(String sitio_web) {
+		this.sitio_web = sitio_web;
 	}
 }

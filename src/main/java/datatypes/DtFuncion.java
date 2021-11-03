@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DtFuncion {
 
 	private String nomFun;
@@ -86,6 +89,21 @@ public class DtFuncion {
 
 	public void setNomEspectaculo(String nomEspectaculo) {
 		this.nomEspectaculo = nomEspectaculo;
+	}
+
+
+	public void setNomFun(String nomFun) {
+		this.nomFun = nomFun;
+	}
+
+
+	public void setFechaRegistroFun(Date fechaRegistroFun) {
+		this.fechaRegistroFun = fechaRegistroFun;
+	}
+
+
+	public void setInvitados(List<String> invitados) {
+		this.invitados = invitados;
 	}
 	
 	

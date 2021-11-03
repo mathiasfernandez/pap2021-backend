@@ -5,7 +5,10 @@ import java.util.Objects;
 
 import logica.Artista;
 import logica.Plataforma;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DtEspectaculo {
 	
 	private String 	nombreEsp;
@@ -109,6 +112,61 @@ public class DtEspectaculo {
 
 	public String getImagen() {
 		return imagen;
+	}
+
+
+	public void setNombreEsp(String nombreEsp) {
+		this.nombreEsp = nombreEsp;
+	}
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+
+
+	public void setMinEspectadores(int minEspectadores) {
+		this.minEspectadores = minEspectadores;
+	}
+
+
+	public void setMaxEspectadores(int maxEspectadores) {
+		this.maxEspectadores = maxEspectadores;
+	}
+
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+
+	public void setCosto(float costo) {
+		this.costo = costo;
+	}
+
+
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+
+
+	public void setPlataforma(String plataforma) {
+		this.plataforma = plataforma;
+	}
+
+
+	public void setArtista(String artista) {
+		this.artista = artista;
+	}
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 	

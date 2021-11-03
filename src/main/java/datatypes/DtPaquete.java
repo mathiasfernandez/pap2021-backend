@@ -1,10 +1,12 @@
 package datatypes;
-
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.List;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.Date;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DtPaquete {
 	private String nombre;
 	private String descripcion;
@@ -83,6 +85,38 @@ public class DtPaquete {
 
 	public Date getfAlta() {
 		return fAlta;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void setfInicio(Date fInicio) {
+		this.fInicio = fInicio;
+	}
+
+	public void setfFinal(Date fFinal) {
+		this.fFinal = fFinal;
+	}
+
+	public void setDescuento(int descuento) {
+		this.descuento = descuento;
+	}
+
+	public void setfAlta(Date fAlta) {
+		this.fAlta = fAlta;
+	}
+
+	public void setCosto(float costo) {
+		this.costo = costo;
+	}
+
+	public void setEspectaculos(List<DtEspectaculo> espectaculos) {
+		this.espectaculos = espectaculos;
 	}
 	
 	

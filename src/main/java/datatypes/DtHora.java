@@ -1,5 +1,8 @@
 package datatypes;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DtHora {
 	
  private int hora;
@@ -41,6 +44,18 @@ public boolean equals(Object obj) {
 		return false;
 	DtHora other = (DtHora) obj;
 	return hora == other.hora && minuto == other.minuto && segundo == other.segundo;
+}
+
+public void setHora(int hora) {
+	this.hora = hora;
+}
+
+public void setMinuto(int minuto) {
+	this.minuto = minuto;
+}
+
+public void setSegundo(int segundo) {
+	this.segundo = segundo;
 }
 
  
